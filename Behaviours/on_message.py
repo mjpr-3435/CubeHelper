@@ -40,9 +40,7 @@ async def on_message(client: commands.Bot, message: discord.Message):
         for guild in client.guilds:
             if guild.id == int(server):
                 invite = await guild.text_channels[0].create_invite(
-                    reason = 'Just want to peek at the server, hope you don\'t mind.', max_uses = 1)
+                    reason = 'Just want to peek at the server, hope you don\'t mind.', max_uses = 1, max_age = 20)
                 break  
 
         await message.channel.send(invite.url)
-        await asyncio.sleep(20)
-        await invite.delete()

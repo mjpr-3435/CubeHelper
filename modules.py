@@ -25,7 +25,7 @@ emoji_blue_logo             = '<:CubeLogoBlue:1303202126880702605>'
 emoji_loading               = '<:Loading:1297713326251311114>'
 
 # Paths
-path_database               = os.path.join('CubeHelper', 'DataBase')
+path_database               = os.path.join('CubeHelper', 'Database')
 path_lists_files            = os.path.join(path_database, 'MaterialListsFiles')
 csv_path_material_lists_log = os.path.join(path_database, 'MaterialListsLog.csv')
 csv_path_registered_servers = os.path.join(path_database, 'RegisteredServers.csv')
