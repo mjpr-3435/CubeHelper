@@ -19,7 +19,7 @@ class change_list_title_command(commands.Cog):
                 return
             
             class message_modal(discord.ui.Modal, title = 'New title'):
-                new_title = discord.ui.TextInput(label = 'Enter the new title here', style = discord.TextStyle.paragraph)
+                new_title = discord.ui.TextInput(label = 'Enter the new title here', style = discord.TextStyle.paragraph, default = MaterialLists.listInfo(message.id, ['title']))
                 
                 async def on_submit(modal, interaction: discord.Interaction):
                     MaterialLists.UpdateListInfo(message.id, {'title': modal.new_title.value})
