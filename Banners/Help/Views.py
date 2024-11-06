@@ -1,4 +1,4 @@
-from .Embeds import setup_embed,features_embeds,credits_embed
+from .Embeds import setup_embed,features_embeds,credits_embed, github_embed
 from ...modules import *
 
 class views(discord.ui.View):
@@ -20,7 +20,13 @@ class views(discord.ui.View):
     async def features_button(view: discord.ui.View, interaction: discord.Interaction, button: discord.ui.Button):
         await interaction.response.send_message(embeds = features_embeds(), ephemeral = True)
     
-    @discord.ui.button(emoji = emoji_white_logo,
+    @discord.ui.button(label = 'GitHub',
+                       emoji = emoji_white_github,
+                        style = discord.ButtonStyle.gray)
+    async def github_button(view: discord.ui.View, interaction: discord.Interaction, button: discord.ui.Button):
+        await interaction.response.send_message(embed = github_embed(), ephemeral = True)
+
+    @discord.ui.button( emoji = emoji_white_logo,
                         style = discord.ButtonStyle.gray)
     async def credits_button(view: discord.ui.View, interaction: discord.Interaction, button: discord.ui.Button):
         await interaction.response.send_message(embed = credits_embed(), ephemeral = True)

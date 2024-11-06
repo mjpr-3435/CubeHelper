@@ -12,6 +12,7 @@ def embed(interaction: discord.Interaction) -> discord.Embed:
             f'- Generate the material list in `.csv` format using Litematica.\n'
             f'- Execute the `/material_list` command.\n'
             f'- Attach the `.csv` file and give the list a title.\n')\
+        .set_footer(text = 'If you have any suggestions or encounter any issues, I would appreciate it if you let me know.')\
         .set_thumbnail(url = link_default_thumbnail)
 
     return embed
@@ -73,5 +74,14 @@ def credits_embed() -> discord.Embed:
         f'Hosted by Aeternum Host.\n[[Aeternum Discord]](https://discord.gg/pXwV7BWd2P)\n\n'
         f'Coded by KassiuLo.\n[[Kassius\' Discord]]({link_discord_invite})\n\n'
         f'Logo by XMasi.')
+    
+    return embed
+
+def github_embed() -> discord.Embed:
+    embed = discord.Embed(
+        title = '> Repository',
+        colour = default_embed_colour,
+        description = 
+        f'GitHub. [[Link]]({link_repository})')
     
     return embed
