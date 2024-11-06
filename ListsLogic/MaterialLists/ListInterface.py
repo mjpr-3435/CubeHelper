@@ -71,7 +71,7 @@ async def reactiveLists(client: commands.Bot) -> None:
     for i in range(len(list_id)):
         try:
             list = await client.get_channel(channel_id[i]).fetch_message(message_id[i])
-            if under_maintenance:
+            if under_maintenance and  guild_id[i] != developer_discord_id:
                 await list.edit(embed = listEmbed(list_id[i], client))
             else:
                 await list.edit(embed = listEmbed(list_id[i], client), view = listsViews())

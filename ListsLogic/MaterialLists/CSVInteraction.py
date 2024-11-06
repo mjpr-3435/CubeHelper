@@ -15,7 +15,7 @@ async def updateStates(client: commands.Bot) -> None:
     df_material_lists_log.to_csv(csv_path_material_lists_log)
   
 def newListLog(interaction: discord.Interaction, list_title: str, message_id: int) -> None:
-    list_path = f'{path_lists_files}/{interaction.guild_id}/{interaction.id}.csv'
+    list_path = os.path.join(path_lists_files,str(interaction.guild_id), f'{interaction.id}.csv')
     list_len = pd.read_csv(list_path).shape[0]
     df_material_list_log = pd.read_csv(csv_path_material_lists_log, index_col = 'index')
     
